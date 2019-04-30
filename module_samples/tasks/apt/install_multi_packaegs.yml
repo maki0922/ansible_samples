@@ -1,0 +1,9 @@
+- hosts: all
+  user: root
+  tasks:
+  - name: Install multi package 
+    apt:
+      name: 
+        - vim-gnome
+        - vlc
+        - gimp

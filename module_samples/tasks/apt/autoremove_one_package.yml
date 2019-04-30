@@ -1,0 +1,9 @@
+- hosts: all
+  user: root
+  tasks:
+  - name: Autoremove the package "libvirt-bin"
+    apt:
+      name: libvirt-bin
+      state: absent
+      purge: yes
+      autoremove: yes

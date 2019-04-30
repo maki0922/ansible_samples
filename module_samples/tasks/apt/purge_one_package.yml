@@ -1,0 +1,8 @@
+- hosts: all
+  user: root
+  tasks:
+  - name: Purge the package "libvirt-bin"
+    apt:
+      name: libvirt-bin
+      state: absent
+      purge: yes
