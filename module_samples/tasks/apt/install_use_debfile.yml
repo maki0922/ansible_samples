@@ -1,0 +1,6 @@
+- hosts: all
+  user: root
+  tasks:
+  - name: Install vlc use DebFile
+    apt:
+      deb: /var/cache/apt/archives/vlc_2.2.2-5ubuntu0.16.04.4_amd64.deb
