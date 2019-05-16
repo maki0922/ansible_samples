@@ -1,7 +1,8 @@
+---
 - hosts: all
-  user: root
   tasks:
   - name: Install multi package 
+    become: yes
     apt:
       name: 
         - vim-gnome

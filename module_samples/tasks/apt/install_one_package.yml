@@ -1,6 +1,7 @@
+---
 - hosts: all
-  user: root
   tasks:
   - name: Install the package "libvirt-bin"
+    become: yes
     apt:
       name: libvirt-bin
