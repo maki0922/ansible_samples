@@ -1,0 +1,27 @@
+---
+- hosts: all
+  vars:
+    number_list: [-1, 1, 2, 10]
+    number_list_nest:  [3, [4, 2] ]
+    number_list_nest_deep:  [3, [4, 2,[5,6]] ]
+
+  tasks:
+  - name: Sample01 List Filters (minimum value from list of numbers)
+    become: yes
+    debug:
+      msg: "minimum number : {{ number_list | min }}"
+
+  - name: Sample02 List Filters (max value from list of numbers)
+    become: yes
+    debug:
+      msg: "minimum number : {{ number_list | max }}"
+
+  - name: Sample03 List Filters (Flatten a list)
+    become: yes
+    debug:
+      msg: "{{ number_list_nest | flatten }}"
+
+  - name: Sample04 List Filters (Flatten a deep list)
+    become: yes
+    debug:
+      msg: "{{ number_list_nest_deep | flatten(levels=2) }}"

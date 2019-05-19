@@ -1,0 +1,15 @@
+---
+- hosts: all
+  tasks:
+  - name: Sample01 Omitting Parameters(d'nt exec omit)
+    become: yes
+    file:
+      dest={{ item.path }} 
+      state=touch 
+      mode={{ item.mode | default(omit) }}
+    loop:
+    - path: /tmp/foo
+      mode: "777"
+    - path: /tmp/bar
+    - path: /tmp/baz
+      mode: "0644"

@@ -1,0 +1,17 @@
+---
+- hosts: all
+  vars:
+    member:
+      maki:
+        age: 17
+        country: japan
+      azuki:
+        age: 17
+        country: internet
+
+  tasks:
+  - name: Sample01 Dict Filter
+    become: yes
+    debug:
+      msg: "user : {{ item.key }}, age : {{ item.value.age }}, country: {{ item.value.country }}"
+    with_dict: "{{ member }}"

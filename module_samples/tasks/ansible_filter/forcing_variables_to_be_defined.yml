@@ -1,0 +1,9 @@
+---
+- hosts: all
+  tasks:
+  - name: Forcing Variables To Be Defined
+    become: yes
+    vars:
+      some_variable: "I'm here"
+    debug:
+      msg: "{{ some_variable | mandatory }}"

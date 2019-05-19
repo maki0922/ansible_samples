@@ -1,0 +1,38 @@
+---
+- hosts: all
+  vars:
+    number_list1: [-1, 1, 2, 10, 100, 1000, 1, -1]
+    number_list2: [1000, 1001, 500, 250]
+    string_list1: ["NEC", "LED", "OCR"]
+    string_list2: ["LED", "ADR", "CCA", "OCR"]
+
+  tasks:
+  - name: Sample01 Set Theory Filters (by unique)
+    become: yes
+    debug:
+      msg: "uniq number : {{ number_list1 | unique }}"
+
+  - name: Sample02 Set Theory Filters (by union)
+    become: yes
+    debug:
+      msg: "union number : {{ number_list1 | union(number_list2) }}"
+
+  - name: Sample03 Set Theory Filters (by intersect)
+    become: yes
+    debug:
+      msg: "intersect string : {{ string_list1 | intersect(string_list2) }}"
+
+  - name: Sample04-01 Set Theory Filters (by difference) 
+    become: yes
+    debug:
+      msg: "difference string : {{ string_list1 | difference(string_list2) }}"
+
+  - name: Sample04-02 Set Theory Filters (by difference) 
+    become: yes
+    debug:
+      msg: "difference string : {{ string_list2 | difference(string_list1) }}"
+
+  - name: Sample05 Set Theory Filters (by symmetric_difference) 
+    become: yes
+    debug:
+      msg: "symmetric_difference string : {{ string_list1 | symmetric_difference(string_list2) }}"

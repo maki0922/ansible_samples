@@ -1,0 +1,21 @@
+---
+- hosts: all
+  tasks:
+  - name: Sample01 Defaulting Undefined Variables(value is in variable)
+    become: yes
+    vars:
+      some_variable: "I'm here"
+    debug:
+      msg: "{{ some_variable | default('Not Found') }}"
+
+  - name: Sample02 Defaulting Undefined Variables(value is not in variable)
+    become: yes
+    debug:
+      msg: "{{ some_variable | default('Not Found') }}"
+
+  - name: Sample03 Defaulting Undefined Variables(value is not in variable type:refer variable)
+    become: yes
+    vars:
+      other_variable: "I'm other."
+    debug:
+      msg: "{{ some_variable | default(other_variable) }}"
