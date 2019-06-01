@@ -1,0 +1,8 @@
+common:
+  age: 99 in group vars in common
+  country: space
+  class:
+    - Warrior
+    - Mage
+    - Ninja
+    - Archer

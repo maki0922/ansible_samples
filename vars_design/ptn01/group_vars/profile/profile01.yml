@@ -1,0 +1,10 @@
+class: Warrior
+country: japan in include profile vars. group_vars
+items:
+  - knife
+  - sword
+skill:
+  - bash:
+     base_damege: 10
+  - smash:
+     base_damage: 15

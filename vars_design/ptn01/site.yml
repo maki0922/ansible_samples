@@ -1,0 +1,14 @@
+---
+- hosts: common
+  tasks:
+  - name: out country
+    debug:
+      msg: "{{ country }}"
+
+  - name: out age
+    debug:
+      msg: "{{ age }}"
+
+  - name: include vars
+    debug:
+      msg: "{{ age }}"

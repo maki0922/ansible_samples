@@ -1,0 +1,12 @@
+class: Mage
+country: america in include group vars
+items:
+  - wand
+  - knife
+skill:
+  - fire:
+     base_damege: 30
+     wait_time: 5
+  - samon:
+     base_damage: 40
+     wait_time: 7 
