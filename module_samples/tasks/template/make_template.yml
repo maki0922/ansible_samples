@@ -1,0 +1,13 @@
+---
+- hosts: all
+  tasks:
+  - name: genearte template
+    become: yes
+    template:
+      src: templates/test01.j2
+      dest: /tmp/file.conf
+      owner: root
+      group: root
+      mode: 0644
+    vars:
+      test_name: Ansible
